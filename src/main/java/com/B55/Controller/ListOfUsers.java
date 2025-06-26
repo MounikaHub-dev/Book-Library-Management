@@ -20,10 +20,12 @@ public class ListOfUsers extends HttpServlet {
 		System.out.println("request for all users");
 		RegisterDao rd = new RegisterDao();
 		List<RegisterModel> allusers = rd.getALLUsers();
+		System.out.println("List of users");
 		if( allusers!=null) {
 		request.setAttribute("allusers", allusers);
 	RequestDispatcher rp =	request.getRequestDispatcher("ListOfUsers.jsp");
 	rp.forward(request,response);
+	
 }
 }
 }
